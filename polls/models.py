@@ -9,11 +9,12 @@ from django.contrib import admin
 class Question(models.Model):
     description = models.CharField(max_length=200)
     pub_date = models.DateTimeField("date published")
-    
+
+    # modifies how a method is rendered in the Django admin list view
     @admin.display(
-        boolean=True,
-        ordering="pub_date",
-        description="Published recently?",
+        boolean=True,                            # Display as a checkmark (✔/✖) based on True/False
+        ordering="pub_date",                        # Allows sorting this column by the 'pub_date' field
+        description="Published recently?",            # Column header in the admin UI
     )
     
     def __str__(self):
