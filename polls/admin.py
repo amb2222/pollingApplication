@@ -17,7 +17,7 @@ class QuestionAdmin(admin.ModelAdmin):
     ]
     
     inlines = [ChoiceInline]
-    list_filter = ["pub_date"]
+    list_filter = ["pub_date"]                # adds a “Filter” sidebar that lets people filter the change list by the pub_date field
     search_fields = ["description"]
 
 
